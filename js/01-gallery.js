@@ -24,20 +24,20 @@ galleryContainer.innerHTML = markup;
 
 galleryContainer.addEventListener("click", onGalleryImageClick);
 
-function onGalleryImageClick(event) {
-  event.preventDefault();
+function onGalleryImageClick(e) {
+  e.preventDefault();
 
-  if (event.target.nodeName !== "IMG") {
+  if (e.target.nodeName !== "IMG") {
     return;
   }
 
   const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}">
+    <img src="${e.target.dataset.source}">
 `);
   instance.show();
 
-  galleryContainer.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
+  galleryContainer.addEventListener("keydown", (e) => {
+    if (e.code === "Escape") {
       instance.close();
     }
   });
