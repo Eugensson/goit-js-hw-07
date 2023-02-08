@@ -20,7 +20,7 @@ const markup = galleryItems
   })
   .join("");
 
-galleryContainer.insertAdjacentHTML("beforeend", markup);
+galleryContainer.innerHTML = markup;
 
 galleryContainer.addEventListener("click", onGalleryImageClick);
 
